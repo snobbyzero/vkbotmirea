@@ -1,1 +1,1 @@
-web: gunicorn vk:app
+web: python vk.py
