@@ -1,8 +1,14 @@
+from flask import Flask
 import vk_api
 from vk_api.longpoll import VkLongPoll, VkEventType
 from vk_api.utils import get_random_id
 from vk_api.keyboard import VkKeyboard, VkKeyboardColor
 import rasp
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route('/')
 def main():
     professors_arr = []
     vk_session = vk_api.VkApi(
@@ -204,4 +210,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    app.run(debug=True)

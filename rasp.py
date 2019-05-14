@@ -197,8 +197,8 @@ def daygroup_rasp(day, agroup):
 def professor_rasp(professor, date):
         string = ""
         arr = ["ПОНЕДЕЛЬНИК\n", "ВТОРНИК\n", "СРЕДА\n", "ЧЕТВЕРГ\n", "ПЯТНИЦА\n", "СУББОТА\n"]
-        rasp = {}
         if date.lower() == "сегодня":
+                rasp = {"1 пара": "", "2 пара": "", "3 пара": "", "4 пара": "", "5 пара": "", "6 пара": ""}
                 for group in groups_list.keys():
                         for couple in groups_list[group][even][int(datetime.date.today().weekday())].keys():
                                 if professor == groups_list[group][even][int(datetime.date.today().weekday())][couple]["Преподаватель"]:
@@ -214,6 +214,7 @@ def professor_rasp(professor, date):
                 for key, value in rasp.items():
                         string += key + ") " + value + "\n"
         elif date.lower() == "завтра":
+                rasp = {"1 пара": "", "2 пара": "", "3 пара": "", "4 пара": "", "5 пара": "", "6 пара": ""}
                 for group in groups_list.keys():
                         for couple in groups_list[group][even][int(datetime.date.today().weekday())+1].keys():
                                 if professor == groups_list[group][even][int(datetime.date.today().weekday())+1][couple]["Преподаватель"]: 
@@ -290,6 +291,4 @@ get_rasp("2k.xlsx")
 get_rasp("3k.xlsx")
 get_rasp("4k.xlsx")
 
-print(professor_rasp("Шмелева А.Г.", "сегодня"))
-print(professor_rasp("Шмелева А.Г.", "эта неделя"))
 
