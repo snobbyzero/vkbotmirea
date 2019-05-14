@@ -1,1 +1,1 @@
-worker: python vk.py
+worker: gunicorn -w 1 vk:app
