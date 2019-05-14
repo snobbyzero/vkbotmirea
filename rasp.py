@@ -19,7 +19,7 @@ def get_week():
 
 even = int(get_week()) % 2
 
-with open("id.txt", "r") as file:
+with open("id.txt", "r", encoding = "1251") as file:
                 for line in file:
                         arr = line.strip().split(" ")
                         group[int(arr[0])] = arr[1]
