@@ -6,7 +6,7 @@ from vk_api.keyboard import VkKeyboard, VkKeyboardColor
 import rasp
 from flask import Flask
 import os
-
+from time import sleep
 app = Flask(__name__)
 
 @app.route('/', methods=["GET"])
@@ -208,6 +208,7 @@ def main():
                     message="Я ничего не смог найти, не ругайтесь, пожалуйста",
                     keyboard = keyboard.get_keyboard()
                 )
+            sleep(0.1)
 
 port = int(os.environ.get('PORT', 8080))
 if __name__ == "__main__":
