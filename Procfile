@@ -1,1 +1,1 @@
-web: gunicorn -b :$PORT vk:app --timeout 10
+web: gunicorn -b :$PORT vk:app 
